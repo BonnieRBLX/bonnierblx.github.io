@@ -1,22 +1,26 @@
-<script language=javascript>
+<!DOCTYPE html>
+<html>
+<body style="background-color:black;">
+
+    <script language=javascript>
     var rev = "fwd";
     function titlebar(val){
         var msg  = "bonnie";
         var res = " ";
         var speed = 100;
         var pos = val;
-        msg = "   |-"+msg+"-|";
+        msg = "   "+msg+"";
         var le = msg.length;
         if(rev == "fwd"){
             if(pos < le){
                 pos = pos+1;
                 scroll = msg.substr(0,pos);
                 document.title = scroll;
-                timer = window.setTimeout("titlebar("+pos+")",speed);
+                timer = window.setTimeout("titlebar(" +pos+")",speed);
             }
             else {
                 rev = "bwd";
-                timer = window.setTimeout("titlebar("+pos+")",speed);
+                timer = window.setTimeout("titlebar(" +pos+")",speed);
             }
         }
         else {
@@ -25,14 +29,19 @@
                 var ale = le-pos;
                 scrol = msg.substr(ale,le);
                 document.title = scrol;
-                timer = window.setTimeout("titlebar("+pos+")",speed);
+                timer = window.setTimeout("titlebar(" +pos+")",speed);
             }
             else {
                 rev = "fwd";
-                timer = window.setTimeout("titlebar("+pos+")",speed);
+                timer = window.setTimeout("titlebar(" +pos+")",speed);
             }
         }
     }
     titlebar(0);
 </script>
 <p><font size="5" color="green" face="Courier New">Get Tokyo Hub below</font></p>
+    
+</body>
+</html>
+
+
