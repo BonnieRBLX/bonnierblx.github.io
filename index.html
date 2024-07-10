@@ -1,2 +1,44 @@
-<title>bonnie</title>
-<h1>please get a bunny</h1>
+/*
+    Now you can add moving text to title bar of browser for your website or blog.
+    Here is the code to do this. Add this code in your website or blog in a widget
+    (after replacing YOUR TEXT with your desired text).
+*/
+
+<script language=javascript>
+    var rev = "fwd";
+    function titlebar(val){
+        var msg  = "bonnie";
+        var res = " ";
+        var speed = 100;
+        var pos = val;
+        msg = "   |-"+msg+"-|";
+        var le = msg.length;
+        if(rev == "fwd"){
+            if(pos < le){
+                pos = pos+1;
+                scroll = msg.substr(0,pos);
+                document.title = scroll;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "bwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+        else {
+            if(pos > 0) {
+                pos = pos-1;
+                var ale = le-pos;
+                scrol = msg.substr(ale,le);
+                document.title = scrol;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "fwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+    }
+    titlebar(0);
+</script>
+<p><font size="5" color="green" face="Courier New">Get Tokyo Hub below</font></p>
